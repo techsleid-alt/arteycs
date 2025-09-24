@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colectivo Escénico - Construcción y Montaje Profesional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Script para iconos (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilo base con la fuente Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Gris oscuro para el fondo */
+            color: #F3F4F6; /* Texto casi blanco */
+        }
+
+        /* Efecto de degradado en el Hero */
+        .hero-gradient {
+            background: linear-gradient(to top, #111827 5%, rgba(17, 24, 39, 0.7) 50%, rgba(17, 24, 39, 0) 100%);
+        }
+
+        /* Animación suave para las secciones al aparecer */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo para los botones de filtro del portafolio */
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #F59E0B; /* Amarillo/Naranja de acento */
+            color: #111827;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-white">
+                ARTE<span class="text-amber-500">YCS</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a>
+                <a href="#portafolio" class="hover:text-amber-500 transition-colors">Portafolio</a>
+                <a href="#nosotros" class="hover:text-amber-500 transition-colors">Nosotros</a>
+                <a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a>
+            </nav>
+            <a href="#contacto" class="hidden md:inline-block bg-amber-500 text-gray-900 font-bold py-2 px-6 rounded-lg hover:bg-amber-400 transition-colors">
+                Cotizar Proyecto
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <a href="#servicios" class="block text-center py-3 px-6 hover:bg-gray-800">Servicios</a>
+            <a href="#portafolio" class="block text-center py-3 px-6 hover:bg-gray-800">Portafolio</a>
+            <a href="#nosotros" class="block text-center py-3 px-6 hover:bg-gray-800">Nosotros</a>
+            <a href="#contacto" class="block text-center py-3 px-6 hover:bg-gray-800">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section id="inicio" class="h-screen bg-cover bg-center bg-no-repeat relative" style="background-image: url('https://placehold.co/1920x1080/1a202c/333333?text=Set+de+Filmaci%C3%B3n');">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase text-white tracking-tighter leading-tight">
+                    Construimos los escenarios<br> <span class="text-amber-500">donde las historias suceden</span>
+                </h1>
+                <p class="mt-6 max-w-3xl text-lg md:text-xl text-gray-300">
+                    Especialistas en diseño, fabricación y montaje para la industria cinematográfica, eventos corporativos, activaciones y exposiciones.
+                </p>
+                <a href="#portafolio" class="mt-8 bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-lg text-lg hover:bg-amber-400 transition-transform hover:scale-105">
+                    Ver Nuestro Trabajo
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold text-white">Nuestros Servicios</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Te ayudamos a convertir en realidad la idea que visualizas en tu mente, tal como la imaginas.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta de Servicio 1 -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center reveal-on-scroll">
+                        <i data-lucide="film" class="w-12 h-12 mx-auto text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Sets para Cine y TV</h3>
+                        <p class="text-gray-400">Construcción de escenografías, acceso a locaciones y fores al rededor de la CDMX. Fabricamos desde un interior realista hasta paisajes fantásticos.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio 2 -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center reveal-on-scroll" style="transition-delay: 100ms;">
+                        <i data-lucide="box" class="w-12 h-12 mx-auto text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Stands para Expos</h3>
+                        <p class="text-gray-400">Diseño y montaje de stands de alto impacto que capturan la atención y comunican la esencia de tu marca.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio 3 -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center reveal-on-scroll" style="transition-delay: 200ms;">
+                        <i data-lucide="party-popper" class="w-12 h-12 mx-auto text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Montaje para Eventos</h3>
+                        <p class="text-gray-400">Creación de tarimas, escenarios, pasarelas y estructuras para conciertos, lanzamientos y eventos corporativos.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio 4 -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center reveal-on-scroll" style="transition-delay: 300ms;">
+                        <i data-lucide="couch" class="w-12 h-12 mx-auto text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Mobiliario y Props</h3>
+                        <p class="text-gray-400">Fabricación a medida de utilería, muebles de época, cocinas funcionales para sets y elementos decorativos únicos.</p>
+                    </div>
+                     <!-- Tarjeta de Servicio 5 -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center reveal-on-scroll" style="transition-delay: 400ms;">
+                        <i data-lucide="hammer" class="w-12 h-12 mx-auto text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Carpintería Especializada</h3>
+                        <p class="text-gray-400">Acabados finos, trabajos en madera y construcción de elementos complejos que requieren precisión y detalle.</p>
+                    </div>
+                     <!-- Tarjeta de Servicio 6 -->
+                    <div class="bg-gray-800 p-8 rounded-lg text-center reveal-on-scroll" style="transition-delay: 500ms;">
+                        <i data-lucide="paint-brush" class="w-12 h-12 mx-auto text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Decoración y Ambientación</h3>
+                        <p class="text-gray-400">Servicios de pintura, texturizado y acabados para dar vida y realismo a cualquier espacio que construimos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PORTAFOLIO -->
+        <section id="portafolio" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold text-white">Nuestro Portafolio</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Hechos, no palabras. Estos son algunos de los proyectos que nos enorgullecen.</p>
+                </div>
+                <!-- Filtros del portafolio -->
+                <div id="portfolio-filters" class="flex justify-center space-x-2 md:space-x-4 mb-12 reveal-on-scroll">
+                    <button class="filter-btn active py-2 px-6 rounded-lg font-semibold bg-gray-700 hover:bg-amber-500 hover:text-gray-900" data-filter="all">Todos</button>
+                    <button class="filter-btn py-2 px-6 rounded-lg font-semibold bg-gray-700 hover:bg-amber-500 hover:text-gray-900" data-filter="cine">Cine/TV</button>
+                    <button class="filter-btn py-2 px-6 rounded-lg font-semibold bg-gray-700 hover:bg-amber-500 hover:text-gray-900" data-filter="eventos">Eventos</button>
+                    <button class="filter-btn py-2 px-6 rounded-lg font-semibold bg-gray-700 hover:bg-amber-500 hover:text-gray-900" data-filter="stands">Stands</button>
+                </div>
+                <!-- Galería -->
+                <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Proyecto 1 -->
+                    <div class="portfolio-item group relative overflow-hidden rounded-lg reveal-on-scroll" data-category="cine">
+                        <img src="https://placehold.co/600x400/f59e0b/111827?text=Producci%C3%B3n+Sci-Fi" alt="Proyecto de Cine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Largometraje "Cosmos"</h3>
+                            <p class="text-amber-400">Construcción de Set Principal</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="portfolio-item group relative overflow-hidden rounded-lg reveal-on-scroll" data-category="stands">
+                        <img src="https://placehold.co/600x400/10b981/111827?text=Stand+Tecnolog%C3%ADa" alt="Stand para Expo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Expo Tech 2024</h3>
+                            <p class="text-emerald-400">Stand para Innovate Corp</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="portfolio-item group relative overflow-hidden rounded-lg reveal-on-scroll" data-category="eventos">
+                        <img src="https://placehold.co/600x400/6366f1/111827?text=Lanzamiento+de+Marca" alt="Evento de Lanzamiento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Lanzamiento "Aura"</h3>
+                            <p class="text-indigo-400">Escenario y Ambientación</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 4 -->
+                    <div class="portfolio-item group relative overflow-hidden rounded-lg reveal-on-scroll" data-category="cine">
+                        <img src="https://placehold.co/600x400/ec4899/111827?text=Serie+de+%C3%89poca" alt="Proyecto de Serie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Serie "El Legado"</h3>
+                            <p class="text-pink-400">Decoración de Interiores</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 5 -->
+                    <div class="portfolio-item group relative overflow-hidden rounded-lg reveal-on-scroll" data-category="stands">
+                        <img src="https://placehold.co/600x400/8b5cf6/111827?text=Stand+Interactivo" alt="Stand Interactivo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Feria del Automóvil</h3>
+                            <p class="text-violet-400">Stand Interactivo</p>
+                        </div>
+                    </div>
+                     <!-- Proyecto 6 -->
+                     <div class="portfolio-item group relative overflow-hidden rounded-lg reveal-on-scroll" data-category="eventos">
+                        <img src="https://placehold.co/600x400/3b82f6/111827?text=Concierto+Ac%C3%BAstico" alt="Escenario para Concierto" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Festival Sónico</h3>
+                            <p class="text-blue-400">Escenario Acústico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOSOTROS -->
+        <section id="nosotros" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal-on-scroll">
+                        <img src="https://placehold.co/800x600/333333/eeeeee?text=El+Equipo+en+Acci%C3%B3n" alt="Equipo trabajando" class="rounded-lg shadow-2xl">
+                    </div>
+                    <div class="reveal-on-scroll" style="transition-delay: 200ms;">
+                        <h2 class="text-4xl font-bold text-white">Un Colectivo de Expertos Apasionados</h2>
+                        <p class="mt-6 text-lg text-gray-400">
+                            Somos un equipo de profesionales con más de 15 años de experiencia combinada en el corazón de la producción de eventos y cine en México. Nos unimos por una simple razón: la pasión por construir y materializar ideas extraordinarias.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-400">
+                            No somos una agencia, somos el equipo de campo. Entendemos la presión, los tiempos de entrega y la necesidad de una ejecución impecable. Nuestra fortaleza es la agilidad, la solución creativa de problemas y un compromiso absoluto con la calidad final de cada proyecto.
+                        </p>
+                        <a href="#contacto" class="mt-8 inline-block bg-transparent border-2 border-amber-500 text-amber-500 font-bold py-3 px-8 rounded-lg hover:bg-amber-500 hover:text-gray-900 transition-colors">
+                            Hablemos de tu Proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="py-20 md:py-32 bg-gray-800">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-4xl font-bold text-white">¿Tienes una idea? <br>Vamos a construirla.</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Envíanos los detalles de tu proyecto y nos pondremos en contacto a la brevedad para agendar una llamada.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 reveal-on-scroll">
+                    <!-- Formulario -->
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="hidden">Nombre</label>
+                            <input type="text" name="name" id="name" placeholder="Tu Nombre" class="w-full bg-gray-700 border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="email" class="hidden">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Tu Correo Electrónico" class="w-full bg-gray-700 border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                         <div>
+                            <label for="phone" class="hidden">Teléfono</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Tu Teléfono (Opcional)" class="w-full bg-gray-700 border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="message" class="hidden">Mensaje</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Cuéntanos sobre tu proyecto..." class="w-full bg-gray-700 border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 text-gray-900 font-bold py-4 px-10 rounded-lg text-lg hover:bg-amber-400 transition-colors">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                    <!-- Información de Contacto -->
+                    <div class="space-y-8 text-lg">
+                        <p>
+                           También puedes contactarnos directamente. Estamos listos para escuchar tus necesidades y ofrecerte una solución a la medida.
+                        </p>
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-amber-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Email</h4>
+                                <a href="mailto:contacto@setbuilders.com" class="text-gray-400 hover:text-amber-500">contacto@setbuilders.com</a>
+                            </div>
+                        </div>
+                         <div class="flex items-start space-x-4">
+                            <i data-lucide="phone" class="w-6 h-6 text-amber-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Teléfono / WhatsApp</h4>
+                                <a href="tel:+525524000827" class="text-gray-400 hover:text-amber-500">+525524000827 5678</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-amber-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Ubicación</h4>
+                                <p class="text-gray-400">Base en Ciudad de México. Proyectos en toda la República.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+            </div>
+            <p>&copy; 2025 TECHSLEID. Todos los derechos reservados.</p>
+            <p class="text-sm mt-1">Diseñado para la Industria Creativa.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Inicializar Lucide Icons
+        lucide.createIcons();
+
+        // Lógica del menú móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Lógica para encoger el header al hacer scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+
+        // Lógica para la animación de secciones al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Lógica para los filtros del portafolio
+        const filterBtns = document.querySelectorAll('#portfolio-filters .filter-btn');
+        const portfolioItems = document.querySelectorAll('#portfolio-grid .portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Cambiar el botón activo
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                // Mostrar/Ocultar los items del portafolio
+                portfolioItems.forEach(item => {
+                    item.style.display = 'none'; // Ocultar para animación
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        // Usamos un pequeño delay para que el efecto sea más agradable
+                        setTimeout(() => {
+                           item.style.display = 'block';
+                        }, 10);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
